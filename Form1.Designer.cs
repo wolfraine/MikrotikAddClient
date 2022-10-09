@@ -39,6 +39,9 @@
             this.programToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.closeProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Client_info = new System.Windows.Forms.Label();
+            this.clientInfoPrint = new System.Windows.Forms.RichTextBox();
+            this.print_btn = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -119,11 +122,43 @@
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
+            // Client_info
+            // 
+            this.Client_info.AutoSize = true;
+            this.Client_info.Location = new System.Drawing.Point(30, 172);
+            this.Client_info.Name = "Client_info";
+            this.Client_info.Size = new System.Drawing.Size(92, 15);
+            this.Client_info.TabIndex = 4;
+            this.Client_info.Text = "Client add value";
+            // 
+            // clientInfoPrint
+            // 
+            this.clientInfoPrint.BackColor = System.Drawing.Color.White;
+            this.clientInfoPrint.Location = new System.Drawing.Point(30, 190);
+            this.clientInfoPrint.Name = "clientInfoPrint";
+            this.clientInfoPrint.ReadOnly = true;
+            this.clientInfoPrint.Size = new System.Drawing.Size(706, 170);
+            this.clientInfoPrint.TabIndex = 5;
+            this.clientInfoPrint.Text = "";
+            // 
+            // print_btn
+            // 
+            this.print_btn.Location = new System.Drawing.Point(342, 78);
+            this.print_btn.Name = "print_btn";
+            this.print_btn.Size = new System.Drawing.Size(75, 23);
+            this.print_btn.TabIndex = 6;
+            this.print_btn.Text = "Print Info";
+            this.print_btn.UseVisualStyleBackColor = true;
+            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.print_btn);
+            this.Controls.Add(this.clientInfoPrint);
+            this.Controls.Add(this.Client_info);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.description_label);
             this.Controls.Add(this.IPadress_label);
@@ -152,5 +187,8 @@
         private ToolStripMenuItem programToolStripMenuItem1;
         private ToolStripMenuItem closeProgramToolStripMenuItem;
         private ToolStripMenuItem helpToolStripMenuItem;
+        private Label Client_info;
+        private RichTextBox clientInfoPrint;
+        private Button print_btn;
     }
 }
