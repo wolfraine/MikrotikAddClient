@@ -1,6 +1,6 @@
 ﻿namespace MikrotikAddClient
 {
-    partial class Form1
+    partial class MikrotikAddClient
     {
         /// <summary>
         ///  Required designer variable.
@@ -37,6 +37,9 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddClientTable = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.DHCP_ServerLabel = new System.Windows.Forms.Label();
+            this.MacAddressBox = new System.Windows.Forms.TextBox();
+            this.MacAddresLabel = new System.Windows.Forms.Label();
             this.UploadSpeedBox = new System.Windows.Forms.TextBox();
             this.DHCP_Value = new System.Windows.Forms.ComboBox();
             this.UploadSpeedLabel = new System.Windows.Forms.Label();
@@ -50,9 +53,6 @@
             this.ipaddress_box = new System.Windows.Forms.TextBox();
             this.description_box = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.MacAddresLabel = new System.Windows.Forms.Label();
-            this.MacAddressBox = new System.Windows.Forms.TextBox();
-            this.DHCP_ServerLabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.AddClientTable.SuspendLayout();
@@ -140,6 +140,31 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Client";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // DHCP_ServerLabel
+            // 
+            this.DHCP_ServerLabel.AutoSize = true;
+            this.DHCP_ServerLabel.Location = new System.Drawing.Point(566, 17);
+            this.DHCP_ServerLabel.Name = "DHCP_ServerLabel";
+            this.DHCP_ServerLabel.Size = new System.Drawing.Size(93, 20);
+            this.DHCP_ServerLabel.TabIndex = 25;
+            this.DHCP_ServerLabel.Text = "DHCP Server";
+            // 
+            // MacAddressBox
+            // 
+            this.MacAddressBox.Location = new System.Drawing.Point(293, 133);
+            this.MacAddressBox.Name = "MacAddressBox";
+            this.MacAddressBox.Size = new System.Drawing.Size(190, 27);
+            this.MacAddressBox.TabIndex = 24;
+            // 
+            // MacAddresLabel
+            // 
+            this.MacAddresLabel.AutoSize = true;
+            this.MacAddresLabel.Location = new System.Drawing.Point(293, 107);
+            this.MacAddresLabel.Name = "MacAddresLabel";
+            this.MacAddresLabel.Size = new System.Drawing.Size(98, 20);
+            this.MacAddresLabel.TabIndex = 23;
+            this.MacAddresLabel.Text = "MAC Address";
             // 
             // UploadSpeedBox
             // 
@@ -256,32 +281,7 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // MacAddresLabel
-            // 
-            this.MacAddresLabel.AutoSize = true;
-            this.MacAddresLabel.Location = new System.Drawing.Point(293, 107);
-            this.MacAddresLabel.Name = "MacAddresLabel";
-            this.MacAddresLabel.Size = new System.Drawing.Size(98, 20);
-            this.MacAddresLabel.TabIndex = 23;
-            this.MacAddresLabel.Text = "MAC Address";
-            // 
-            // MacAddressBox
-            // 
-            this.MacAddressBox.Location = new System.Drawing.Point(293, 133);
-            this.MacAddressBox.Name = "MacAddressBox";
-            this.MacAddressBox.Size = new System.Drawing.Size(190, 27);
-            this.MacAddressBox.TabIndex = 24;
-            // 
-            // DHCP_ServerLabel
-            // 
-            this.DHCP_ServerLabel.AutoSize = true;
-            this.DHCP_ServerLabel.Location = new System.Drawing.Point(566, 17);
-            this.DHCP_ServerLabel.Name = "DHCP_ServerLabel";
-            this.DHCP_ServerLabel.Size = new System.Drawing.Size(93, 20);
-            this.DHCP_ServerLabel.TabIndex = 25;
-            this.DHCP_ServerLabel.Text = "DHCP Server";
-            // 
-            // Form1
+            // MikrotikAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -290,8 +290,8 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MikrotikAddClient";
+            this.Text = "Mikrotik Client Add";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);

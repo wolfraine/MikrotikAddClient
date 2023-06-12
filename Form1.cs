@@ -3,7 +3,7 @@ using System.IO;
 
 namespace MikrotikAddClient
 {
-    public partial class Form1 : Form
+    public partial class MikrotikAddClient : Form
     {
         string ipAddress = "";
         string clientDescription = "";
@@ -12,7 +12,7 @@ namespace MikrotikAddClient
         string DHCP_Server = "";
         string MAC_Address = "";
 
-        public Form1()
+        public MikrotikAddClient()
         {
             InitializeComponent();
         }
@@ -36,8 +36,6 @@ namespace MikrotikAddClient
         {
             string[] FromFile = File.ReadAllLines(@"DHCP-Servers.txt");
             DHCP_Value.DataSource = FromFile;
-            //DHCP_Value.Items.Add("DHCP-OLE");
-            //DHCP_Value.Items.Add("DHCP-Kanzas");
         }
     }
 }
