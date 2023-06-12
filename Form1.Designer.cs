@@ -37,7 +37,8 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddClientTable = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.UploadSpeedBox = new System.Windows.Forms.TextBox();
+            this.DHCP_Value = new System.Windows.Forms.ComboBox();
             this.UploadSpeedLabel = new System.Windows.Forms.Label();
             this.DownloadSpeedLabel = new System.Windows.Forms.Label();
             this.DownloadSpeedBox = new System.Windows.Forms.TextBox();
@@ -49,7 +50,9 @@
             this.ipaddress_box = new System.Windows.Forms.TextBox();
             this.description_box = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.MacAddresLabel = new System.Windows.Forms.Label();
+            this.MacAddressBox = new System.Windows.Forms.TextBox();
+            this.DHCP_ServerLabel = new System.Windows.Forms.Label();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.AddClientTable.SuspendLayout();
@@ -115,8 +118,11 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.textBox1);
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.DHCP_ServerLabel);
+            this.tabPage1.Controls.Add(this.MacAddressBox);
+            this.tabPage1.Controls.Add(this.MacAddresLabel);
+            this.tabPage1.Controls.Add(this.UploadSpeedBox);
+            this.tabPage1.Controls.Add(this.DHCP_Value);
             this.tabPage1.Controls.Add(this.UploadSpeedLabel);
             this.tabPage1.Controls.Add(this.DownloadSpeedLabel);
             this.tabPage1.Controls.Add(this.DownloadSpeedBox);
@@ -135,13 +141,20 @@
             this.tabPage1.Text = "Add Client";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // UploadSpeedBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(566, 41);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 28);
-            this.comboBox1.TabIndex = 2;
+            this.UploadSpeedBox.Location = new System.Drawing.Point(141, 133);
+            this.UploadSpeedBox.Name = "UploadSpeedBox";
+            this.UploadSpeedBox.Size = new System.Drawing.Size(78, 27);
+            this.UploadSpeedBox.TabIndex = 4;
+            // 
+            // DHCP_Value
+            // 
+            this.DHCP_Value.FormattingEnabled = true;
+            this.DHCP_Value.Location = new System.Drawing.Point(566, 41);
+            this.DHCP_Value.Name = "DHCP_Value";
+            this.DHCP_Value.Size = new System.Drawing.Size(151, 28);
+            this.DHCP_Value.TabIndex = 2;
             // 
             // UploadSpeedLabel
             // 
@@ -243,12 +256,30 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // MacAddresLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(141, 133);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(78, 27);
-            this.textBox1.TabIndex = 23;
+            this.MacAddresLabel.AutoSize = true;
+            this.MacAddresLabel.Location = new System.Drawing.Point(293, 107);
+            this.MacAddresLabel.Name = "MacAddresLabel";
+            this.MacAddresLabel.Size = new System.Drawing.Size(98, 20);
+            this.MacAddresLabel.TabIndex = 23;
+            this.MacAddresLabel.Text = "MAC Address";
+            // 
+            // MacAddressBox
+            // 
+            this.MacAddressBox.Location = new System.Drawing.Point(293, 133);
+            this.MacAddressBox.Name = "MacAddressBox";
+            this.MacAddressBox.Size = new System.Drawing.Size(190, 27);
+            this.MacAddressBox.TabIndex = 24;
+            // 
+            // DHCP_ServerLabel
+            // 
+            this.DHCP_ServerLabel.AutoSize = true;
+            this.DHCP_ServerLabel.Location = new System.Drawing.Point(566, 17);
+            this.DHCP_ServerLabel.Name = "DHCP_ServerLabel";
+            this.DHCP_ServerLabel.Size = new System.Drawing.Size(93, 20);
+            this.DHCP_ServerLabel.TabIndex = 25;
+            this.DHCP_ServerLabel.Text = "DHCP Server";
             // 
             // Form1
             // 
@@ -261,6 +292,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.contextMenuStrip1.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -286,7 +318,6 @@
         private TabPage tabPage4;
         private Label UploadSpeedLabel;
         private Label DownloadSpeedLabel;
-        private TextBox UploadSpeedBox;
         private TextBox DownloadSpeedBox;
         private Button print_btn;
         private RichTextBox clientInfoPrint;
@@ -297,6 +328,10 @@
         private TextBox description_box;
         private TabPage tabPage2;
         private ComboBox comboBox1;
-        private TextBox textBox1;
+        private TextBox UploadSpeedBox;
+        private ComboBox DHCP_Value;
+        private Label DHCP_ServerLabel;
+        private TextBox MacAddressBox;
+        private Label MacAddresLabel;
     }
 }
