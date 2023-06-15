@@ -53,10 +53,14 @@
             this.ipaddress_box = new System.Windows.Forms.TextBox();
             this.description_box = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.AddNewDHCP_ServerLabel = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AddDHCP_ServerButton = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.AddClientTable.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -273,13 +277,41 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.AddDHCP_ServerButton);
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.AddNewDHCP_ServerLabel);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(901, 516);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Add DHCP Server";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // AddNewDHCP_ServerLabel
+            // 
+            this.AddNewDHCP_ServerLabel.AutoSize = true;
+            this.AddNewDHCP_ServerLabel.Location = new System.Drawing.Point(54, 43);
+            this.AddNewDHCP_ServerLabel.Name = "AddNewDHCP_ServerLabel";
+            this.AddNewDHCP_ServerLabel.Size = new System.Drawing.Size(203, 20);
+            this.AddNewDHCP_ServerLabel.TabIndex = 0;
+            this.AddNewDHCP_ServerLabel.Text = "Paste new DHCP Server name";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(54, 66);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(202, 27);
+            this.textBox1.TabIndex = 2;
+            // 
+            // AddDHCP_ServerButton
+            // 
+            this.AddDHCP_ServerButton.Location = new System.Drawing.Point(315, 66);
+            this.AddDHCP_ServerButton.Name = "AddDHCP_ServerButton";
+            this.AddDHCP_ServerButton.Size = new System.Drawing.Size(94, 29);
+            this.AddDHCP_ServerButton.TabIndex = 3;
+            this.AddDHCP_ServerButton.Text = "Add";
+            this.AddDHCP_ServerButton.UseVisualStyleBackColor = true;
             // 
             // MikrotikAddClient
             // 
@@ -299,6 +331,8 @@
             this.AddClientTable.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +367,8 @@
         private Label DHCP_ServerLabel;
         private TextBox MacAddressBox;
         private Label MacAddresLabel;
+        private Button AddDHCP_ServerButton;
+        private TextBox textBox1;
+        private Label AddNewDHCP_ServerLabel;
     }
 }
