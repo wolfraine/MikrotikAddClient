@@ -60,5 +60,19 @@ namespace MikrotikAddClient
         {
             Clipboard.SetDataObject(clipboardtext);
         }
+
+        private void Edit_Button_Click(object sender, EventArgs e)
+        {
+            Update_Box.Text = DHCP_ServerList.Text;
+        }
+
+        private void UpdateButton_Click(object sender, EventArgs e)
+        {
+            int index = DHCP_ServerList.SelectedIndex;
+            
+            //DHCP_ServerList.SelectedItem = Update_Box.Text;
+            //DHCP_ServerList.Text = Update_Box.Text;
+            UpdateForm();
+        }
     }
 }

@@ -37,6 +37,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AddClientTable = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.Copy_Button = new System.Windows.Forms.Button();
             this.DHCP_ServerLabel = new System.Windows.Forms.Label();
             this.MacAddressBox = new System.Windows.Forms.TextBox();
             this.MacAddresLabel = new System.Windows.Forms.Label();
@@ -53,11 +54,14 @@
             this.ipaddress_box = new System.Windows.Forms.TextBox();
             this.description_box = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.Edit_Button = new System.Windows.Forms.Button();
+            this.Update_Box = new System.Windows.Forms.TextBox();
+            this.UpdateButton = new System.Windows.Forms.Button();
+            this.RemoveButton = new System.Windows.Forms.Button();
             this.DHCP_ServerList = new System.Windows.Forms.ListBox();
             this.AddDHCP_ServerButton = new System.Windows.Forms.Button();
             this.NewDHCP_ServerBox = new System.Windows.Forms.TextBox();
             this.AddNewDHCP_ServerLabel = new System.Windows.Forms.Label();
-            this.Copy_Button = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.AddClientTable.SuspendLayout();
@@ -147,6 +151,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Client";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Copy_Button
+            // 
+            this.Copy_Button.Location = new System.Drawing.Point(633, 447);
+            this.Copy_Button.Name = "Copy_Button";
+            this.Copy_Button.Size = new System.Drawing.Size(94, 29);
+            this.Copy_Button.TabIndex = 26;
+            this.Copy_Button.Text = "Copy";
+            this.Copy_Button.UseVisualStyleBackColor = true;
+            this.Copy_Button.Click += new System.EventHandler(this.Copy_Button_Click);
             // 
             // DHCP_ServerLabel
             // 
@@ -280,6 +294,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.Edit_Button);
+            this.tabPage2.Controls.Add(this.Update_Box);
+            this.tabPage2.Controls.Add(this.UpdateButton);
+            this.tabPage2.Controls.Add(this.RemoveButton);
             this.tabPage2.Controls.Add(this.DHCP_ServerList);
             this.tabPage2.Controls.Add(this.AddDHCP_ServerButton);
             this.tabPage2.Controls.Add(this.NewDHCP_ServerBox);
@@ -291,6 +309,42 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add DHCP Server";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // Edit_Button
+            // 
+            this.Edit_Button.Location = new System.Drawing.Point(432, 136);
+            this.Edit_Button.Name = "Edit_Button";
+            this.Edit_Button.Size = new System.Drawing.Size(94, 29);
+            this.Edit_Button.TabIndex = 8;
+            this.Edit_Button.Text = "Edit";
+            this.Edit_Button.UseVisualStyleBackColor = true;
+            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
+            // 
+            // Update_Box
+            // 
+            this.Update_Box.Location = new System.Drawing.Point(54, 402);
+            this.Update_Box.Name = "Update_Box";
+            this.Update_Box.Size = new System.Drawing.Size(231, 27);
+            this.Update_Box.TabIndex = 7;
+            // 
+            // UpdateButton
+            // 
+            this.UpdateButton.Location = new System.Drawing.Point(315, 402);
+            this.UpdateButton.Name = "UpdateButton";
+            this.UpdateButton.Size = new System.Drawing.Size(94, 29);
+            this.UpdateButton.TabIndex = 6;
+            this.UpdateButton.Text = "Update";
+            this.UpdateButton.UseVisualStyleBackColor = true;
+            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Location = new System.Drawing.Point(432, 189);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(94, 29);
+            this.RemoveButton.TabIndex = 5;
+            this.RemoveButton.Text = "Remove";
+            this.RemoveButton.UseVisualStyleBackColor = true;
             // 
             // DHCP_ServerList
             // 
@@ -326,16 +380,6 @@
             this.AddNewDHCP_ServerLabel.Size = new System.Drawing.Size(203, 20);
             this.AddNewDHCP_ServerLabel.TabIndex = 0;
             this.AddNewDHCP_ServerLabel.Text = "Paste new DHCP Server name";
-            // 
-            // Copy_Button
-            // 
-            this.Copy_Button.Location = new System.Drawing.Point(633, 447);
-            this.Copy_Button.Name = "Copy_Button";
-            this.Copy_Button.Size = new System.Drawing.Size(94, 29);
-            this.Copy_Button.TabIndex = 26;
-            this.Copy_Button.Text = "Copy";
-            this.Copy_Button.UseVisualStyleBackColor = true;
-            this.Copy_Button.Click += new System.EventHandler(this.Copy_Button_Click);
             // 
             // MikrotikAddClient
             // 
@@ -396,5 +440,9 @@
         private Label AddNewDHCP_ServerLabel;
         private ListBox DHCP_ServerList;
         private Button Copy_Button;
+        private TextBox Update_Box;
+        private Button UpdateButton;
+        private Button RemoveButton;
+        private Button Edit_Button;
     }
 }
