@@ -11,6 +11,7 @@ namespace MikrotikAddClient
         int DownloadSpeed = 0;
         string DHCP_Server = "";
         string MAC_Address = "";
+        List<string> FromFile = new List<string> ();
 
         public MikrotikAddClient()
         {
@@ -28,14 +29,26 @@ namespace MikrotikAddClient
 
             clientInfoPrint.Text = "/queue simple\n" +
                 "add burst-limit=" + ((int)(UploadSpeed * 1.1)) + "M/" + ((int)(DownloadSpeed * 1.1)) + "M burst-threshold=" + UploadSpeed + "M/" + DownloadSpeed + "M burst-time=8s/8s max-limit=" + UploadSpeed + "M/" + DownloadSpeed + "M name=" + clientDescription + " queue=wireless-default/wireless-default target=" + ipAddress +
-                "\n/ip firewall address-list\nadd address=" + ipAddress + " comment=" + clientDescription + " list=klienci" +
-                "\n/ip dhcp-server lease\nadd address=" + ipAddress + " always-broadcast=yes comment=" + clientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server;
+                "\n/delay 1\n/ip firewall address-list\nadd address=" + ipAddress + " comment=" + clientDescription + " list=klienci" +
+                "\n/delay 1\n/ip dhcp-server lease\nadd address=" + ipAddress + " always-broadcast=yes comment=" + clientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server+" \n/delay 1";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            string[] FromFile = File.ReadAllLines(@"DHCP-Servers.txt");
-            DHCP_Value.DataSource = FromFile;
+            FromFile.AddRange(File.ReadAllLines(@"DHCP-Servers.txt"));
+            UpdateForm();
+        }
+
+        private void AddDHCP_ServerButton_Click(object sender, EventArgs e)
+        {
+            FromFile.Add(NewDHCP_ServerBox.Text);
+            NewDHCP_ServerBox.Clear();
+            UpdateForm();
+        }
+        private void UpdateForm()
+        {
+            DHCP_Value.Items.Clear();
+            DHCP_Value.Items.AddRange(FromFile.ToArray());
         }
     }
 }
