@@ -157,7 +157,7 @@
             this.Copy_Button.Location = new System.Drawing.Point(633, 447);
             this.Copy_Button.Name = "Copy_Button";
             this.Copy_Button.Size = new System.Drawing.Size(94, 29);
-            this.Copy_Button.TabIndex = 26;
+            this.Copy_Button.TabIndex = 9;
             this.Copy_Button.Text = "Copy";
             this.Copy_Button.UseVisualStyleBackColor = true;
             this.Copy_Button.Click += new System.EventHandler(this.Copy_Button_Click);
@@ -165,7 +165,7 @@
             // DHCP_ServerLabel
             // 
             this.DHCP_ServerLabel.AutoSize = true;
-            this.DHCP_ServerLabel.Location = new System.Drawing.Point(566, 17);
+            this.DHCP_ServerLabel.Location = new System.Drawing.Point(293, 108);
             this.DHCP_ServerLabel.Name = "DHCP_ServerLabel";
             this.DHCP_ServerLabel.Size = new System.Drawing.Size(93, 20);
             this.DHCP_ServerLabel.TabIndex = 25;
@@ -173,15 +173,15 @@
             // 
             // MacAddressBox
             // 
-            this.MacAddressBox.Location = new System.Drawing.Point(293, 133);
+            this.MacAddressBox.Location = new System.Drawing.Point(621, 100);
             this.MacAddressBox.Name = "MacAddressBox";
             this.MacAddressBox.Size = new System.Drawing.Size(190, 27);
-            this.MacAddressBox.TabIndex = 24;
+            this.MacAddressBox.TabIndex = 6;
             // 
             // MacAddresLabel
             // 
             this.MacAddresLabel.AutoSize = true;
-            this.MacAddresLabel.Location = new System.Drawing.Point(293, 107);
+            this.MacAddresLabel.Location = new System.Drawing.Point(621, 74);
             this.MacAddresLabel.Name = "MacAddresLabel";
             this.MacAddresLabel.Size = new System.Drawing.Size(98, 20);
             this.MacAddresLabel.TabIndex = 23;
@@ -192,15 +192,15 @@
             this.UploadSpeedBox.Location = new System.Drawing.Point(141, 133);
             this.UploadSpeedBox.Name = "UploadSpeedBox";
             this.UploadSpeedBox.Size = new System.Drawing.Size(78, 27);
-            this.UploadSpeedBox.TabIndex = 4;
+            this.UploadSpeedBox.TabIndex = 3;
             // 
             // DHCP_Value
             // 
             this.DHCP_Value.FormattingEnabled = true;
-            this.DHCP_Value.Location = new System.Drawing.Point(566, 41);
+            this.DHCP_Value.Location = new System.Drawing.Point(293, 132);
             this.DHCP_Value.Name = "DHCP_Value";
             this.DHCP_Value.Size = new System.Drawing.Size(278, 28);
-            this.DHCP_Value.TabIndex = 2;
+            this.DHCP_Value.TabIndex = 5;
             // 
             // UploadSpeedLabel
             // 
@@ -225,7 +225,7 @@
             this.DownloadSpeedBox.Location = new System.Drawing.Point(38, 133);
             this.DownloadSpeedBox.Name = "DownloadSpeedBox";
             this.DownloadSpeedBox.Size = new System.Drawing.Size(78, 27);
-            this.DownloadSpeedBox.TabIndex = 3;
+            this.DownloadSpeedBox.TabIndex = 2;
             // 
             // print_btn
             // 
@@ -233,7 +233,7 @@
             this.print_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.print_btn.Name = "print_btn";
             this.print_btn.Size = new System.Drawing.Size(86, 31);
-            this.print_btn.TabIndex = 6;
+            this.print_btn.TabIndex = 8;
             this.print_btn.Text = "Print Info";
             this.print_btn.UseVisualStyleBackColor = true;
             this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
@@ -246,7 +246,7 @@
             this.clientInfoPrint.Name = "clientInfoPrint";
             this.clientInfoPrint.ReadOnly = true;
             this.clientInfoPrint.Size = new System.Drawing.Size(806, 225);
-            this.clientInfoPrint.TabIndex = 5;
+            this.clientInfoPrint.TabIndex = 7;
             this.clientInfoPrint.Text = "";
             // 
             // Client_info
@@ -289,7 +289,7 @@
             this.description_box.Location = new System.Drawing.Point(293, 41);
             this.description_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.description_box.Name = "description_box";
-            this.description_box.Size = new System.Drawing.Size(190, 27);
+            this.description_box.Size = new System.Drawing.Size(278, 27);
             this.description_box.TabIndex = 1;
             // 
             // tabPage2
