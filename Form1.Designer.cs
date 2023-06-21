@@ -345,6 +345,7 @@
             this.RemoveButton.TabIndex = 5;
             this.RemoveButton.Text = "Remove";
             this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // DHCP_ServerList
             // 

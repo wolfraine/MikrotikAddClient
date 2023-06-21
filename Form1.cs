@@ -69,9 +69,14 @@ namespace MikrotikAddClient
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             int index = DHCP_ServerList.SelectedIndex;
-            
-            //DHCP_ServerList.SelectedItem = Update_Box.Text;
-            //DHCP_ServerList.Text = Update_Box.Text;
+            FromFile.RemoveAt(index);
+            FromFile.Insert(index, Update_Box.Text);
+            UpdateForm();
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            FromFile.RemoveAt(DHCP_ServerList.SelectedIndex);
             UpdateForm();
         }
     }
