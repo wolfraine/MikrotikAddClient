@@ -79,5 +79,14 @@ namespace MikrotikAddClient
             FromFile.RemoveAt(DHCP_ServerList.SelectedIndex);
             UpdateForm();
         }
+
+        private void Clear_button_Click(object sender, EventArgs e)
+        {
+            ipaddress_box.Clear();
+            description_box.Clear();
+            DownloadSpeedBox.Clear();
+            UploadSpeedBox.Clear();
+            MacAddressBox.Clear();
+        }
     }
 }

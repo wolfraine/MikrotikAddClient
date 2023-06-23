@@ -62,6 +62,7 @@
             this.AddDHCP_ServerButton = new System.Windows.Forms.Button();
             this.NewDHCP_ServerBox = new System.Windows.Forms.TextBox();
             this.AddNewDHCP_ServerLabel = new System.Windows.Forms.Label();
+            this.Clear_button = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.AddClientTable.SuspendLayout();
@@ -128,6 +129,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.Clear_button);
             this.tabPage1.Controls.Add(this.Copy_Button);
             this.tabPage1.Controls.Add(this.DHCP_ServerLabel);
             this.tabPage1.Controls.Add(this.MacAddressBox);
@@ -382,6 +384,16 @@
             this.AddNewDHCP_ServerLabel.TabIndex = 0;
             this.AddNewDHCP_ServerLabel.Text = "Paste new DHCP Server name";
             // 
+            // Clear_button
+            // 
+            this.Clear_button.Location = new System.Drawing.Point(38, 447);
+            this.Clear_button.Name = "Clear_button";
+            this.Clear_button.Size = new System.Drawing.Size(94, 29);
+            this.Clear_button.TabIndex = 26;
+            this.Clear_button.Text = "Clear";
+            this.Clear_button.UseVisualStyleBackColor = true;
+            this.Clear_button.Click += new System.EventHandler(this.Clear_button_Click);
+            // 
             // MikrotikAddClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -445,5 +457,6 @@
         private Button UpdateButton;
         private Button RemoveButton;
         private Button Edit_Button;
+        private Button Clear_button;
     }
 }
