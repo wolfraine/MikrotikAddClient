@@ -17,6 +17,7 @@ namespace MikrotikAddClient
         string DHCP_Server = "";
         string MAC_Address = "";
         List<string> FromFile = new List<string>();
+        string FileName = "DHCP-Servers.txt";
 
         public MikrotikAddClient()
         {
@@ -44,7 +45,6 @@ namespace MikrotikAddClient
         {
             DownloadSpeedBox.Text = "10";
             UploadSpeedBox.Text = "2";
-            string FileName = "DHCP-Servers.txt";
 
             if (!File.Exists(FileName))
             {
@@ -68,8 +68,21 @@ namespace MikrotikAddClient
         {
             FromFile.Add(NewDHCP_ServerBox.Text);
             NewDHCP_ServerBox.Clear();
+            SaveToFile();
             UpdateForm();
         }
+
+        private void SaveToFile()
+        {
+            using (StreamWriter sw = File.CreateText(FileName))
+            {
+                foreach (var line in FromFile)
+                {
+                    sw.WriteLine(line);
+                }
+            }
+        }
+
         private void UpdateForm()
         {
             DHCP_Value.Items.Clear();
@@ -93,12 +106,14 @@ namespace MikrotikAddClient
             int index = DHCP_ServerList.SelectedIndex;
             FromFile.RemoveAt(index);
             FromFile.Insert(index, Update_Box.Text);
+            SaveToFile();
             UpdateForm();
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             FromFile.RemoveAt(DHCP_ServerList.SelectedIndex);
+            SaveToFile();
             UpdateForm();
         }
 
