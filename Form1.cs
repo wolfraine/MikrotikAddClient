@@ -1,6 +1,6 @@
 using System.IO;
 using System.Windows.Forms;
-
+using System.Windows.Forms.Design;
 
 namespace MikrotikAddClient
 {
@@ -42,7 +42,25 @@ namespace MikrotikAddClient
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            FromFile.AddRange(File.ReadAllLines(@"DHCP-Servers.txt"));
+            DownloadSpeedBox.Text = "10";
+            UploadSpeedBox.Text = "2";
+            string FileName = "DHCP-Servers.txt";
+
+            if (!File.Exists(FileName))
+            {
+                using (StreamWriter sw = File.CreateText(FileName))
+                {
+                    sw.WriteLine("List is Empty");
+                    //foreach (var line in employeeList.Items)
+                    //{
+                    //    sw.WriteLine(((Employee)line).FirstName);
+                    //    sw.WriteLine(((Employee)line).LastName);
+                    //    sw.WriteLine(((Employee)line).JobTitle);
+                    //}
+                }
+            }
+            
+            FromFile.AddRange(File.ReadAllLines(FileName));
             UpdateForm();
         }
 
