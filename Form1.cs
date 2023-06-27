@@ -6,6 +6,9 @@ namespace MikrotikAddClient
 {
     public partial class MikrotikAddClient : Form
     {
+        string queue = "";
+        string dhcpleases = "";
+        string firewall_list = "";
         string clipboardtext = "";
         string ipAddress = "";
         string clientDescription = "";
@@ -29,10 +32,11 @@ namespace MikrotikAddClient
             MAC_Address = MacAddressBox.Text;
             DHCP_Server = DHCP_Value.Text;
 
-            clipboardtext = "/queue simple\r\n " +
-                "add burst-limit=" + ((int)(UploadSpeed * 1.1)) + "M/" + ((int)(DownloadSpeed * 1.1)) + "M burst-threshold=" + UploadSpeed + "M/" + DownloadSpeed + "M burst-time=8s/8s max-limit=" + UploadSpeed + "M/" + DownloadSpeed + "M name=" + clientDescription + " queue=wireless-default/wireless-default target=" + ipAddress +" \r\n"+
-                "/delay 1 \r\n/ip firewall address-list\nadd address=" + ipAddress + " comment=" + clientDescription + " list=klienci \r\n" +
-                "/delay 1 \r\n/ip dhcp-server lease\nadd address=" + ipAddress + " always-broadcast=yes comment=" + clientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server + " \r\n /delay 1";
+            queue = "/queue simple\r\n add burst-limit=" + ((int)(UploadSpeed * 1.1)) + "M/" + ((int)(DownloadSpeed * 1.1)) + "M burst-threshold=" + UploadSpeed + "M/" + DownloadSpeed + "M burst-time=8s/8s max-limit=" + UploadSpeed + "M/" + DownloadSpeed + "M name=" + clientDescription + " queue=wireless-default/wireless-default target=" + ipAddress + " \r\n";
+            dhcpleases = "/delay 1 \r\n/ip dhcp-server lease\r\n add address=" + ipAddress + " always-broadcast=yes comment=" + clientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server + " \r\n";
+            firewall_list = "/delay 1 \r\n/ip firewall address-list\r\n add address=" + ipAddress + " comment=" + clientDescription + " list=klienci \r\n";
+
+            clipboardtext = queue + dhcpleases + firewall_list;
             clientInfoPrint.Text = clipboardtext;
         }
 
@@ -87,6 +91,16 @@ namespace MikrotikAddClient
             DownloadSpeedBox.Clear();
             UploadSpeedBox.Clear();
             MacAddressBox.Clear();
+        }
+
+        private void DownloadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar);
+        }
+
+        private void UploadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar);
         }
     }
 }
