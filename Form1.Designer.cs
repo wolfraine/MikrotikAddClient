@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MikrotikAddClient));
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -111,6 +112,7 @@
             this.closeProgramToolStripMenuItem.Name = "closeProgramToolStripMenuItem";
             this.closeProgramToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.closeProgramToolStripMenuItem.Text = "Close Program";
+            this.closeProgramToolStripMenuItem.Click += new System.EventHandler(this.closeProgramToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
             // 
@@ -125,7 +127,7 @@
             this.AddClientTable.Location = new System.Drawing.Point(0, 33);
             this.AddClientTable.Name = "AddClientTable";
             this.AddClientTable.SelectedIndex = 0;
-            this.AddClientTable.Size = new System.Drawing.Size(989, 549);
+            this.AddClientTable.Size = new System.Drawing.Size(990, 549);
             this.AddClientTable.TabIndex = 1;
             // 
             // tabPage1
@@ -151,7 +153,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(981, 516);
+            this.tabPage1.Size = new System.Drawing.Size(982, 516);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Add Client";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -164,6 +166,7 @@
             this.GenerateMacButton.TabIndex = 27;
             this.GenerateMacButton.Text = "Gen Mac";
             this.GenerateMacButton.UseVisualStyleBackColor = true;
+            this.GenerateMacButton.Click += new System.EventHandler(this.GenerateMacButton_Click);
             // 
             // Clear_button
             // 
@@ -330,7 +333,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(981, 516);
+            this.tabPage2.Size = new System.Drawing.Size(982, 516);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Add DHCP Server";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -414,6 +417,7 @@
             this.ClientSize = new System.Drawing.Size(989, 573);
             this.Controls.Add(this.AddClientTable);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "MikrotikAddClient";

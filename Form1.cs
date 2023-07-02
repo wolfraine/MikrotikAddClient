@@ -83,6 +83,15 @@ namespace MikrotikAddClient
             }
         }
 
+        public static string GetRandomMacAddress()
+        {
+            var random = new Random();
+            var buffer = new byte[6];
+            random.NextBytes(buffer);
+            var result = String.Concat(buffer.Select(x => string.Format("{0}:", x.ToString("X2"))).ToArray());
+            return result.TrimEnd(':');
+        }
+
         private void UpdateForm()
         {
             DHCP_Value.Items.Clear();
@@ -124,6 +133,7 @@ namespace MikrotikAddClient
             DownloadSpeedBox.Clear();
             UploadSpeedBox.Clear();
             MacAddressBox.Clear();
+            clientInfoPrint.Clear();
         }
 
         private void DownloadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -134,6 +144,16 @@ namespace MikrotikAddClient
         private void UploadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar);
+        }
+
+        private void closeProgramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
+
+        private void GenerateMacButton_Click(object sender, EventArgs e)
+        {
+            MacAddressBox.Text = GetRandomMacAddress();
         }
     }
 }
