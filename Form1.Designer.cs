@@ -28,412 +28,420 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MikrotikAddClient));
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.programToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.programToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.closeProgramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddClientTable = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.GenerateMacButton = new System.Windows.Forms.Button();
-            this.Clear_button = new System.Windows.Forms.Button();
-            this.Copy_Button = new System.Windows.Forms.Button();
-            this.DHCP_ServerLabel = new System.Windows.Forms.Label();
-            this.MacAddressBox = new System.Windows.Forms.TextBox();
-            this.MacAddresLabel = new System.Windows.Forms.Label();
-            this.UploadSpeedBox = new System.Windows.Forms.TextBox();
-            this.DHCP_Value = new System.Windows.Forms.ComboBox();
-            this.UploadSpeedLabel = new System.Windows.Forms.Label();
-            this.DownloadSpeedLabel = new System.Windows.Forms.Label();
-            this.DownloadSpeedBox = new System.Windows.Forms.TextBox();
-            this.print_btn = new System.Windows.Forms.Button();
-            this.clientInfoPrint = new System.Windows.Forms.RichTextBox();
-            this.Client_info = new System.Windows.Forms.Label();
-            this.description_label = new System.Windows.Forms.Label();
-            this.IPadress_label = new System.Windows.Forms.Label();
-            this.ipaddress_box = new System.Windows.Forms.TextBox();
-            this.description_box = new System.Windows.Forms.TextBox();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Edit_Button = new System.Windows.Forms.Button();
-            this.Update_Box = new System.Windows.Forms.TextBox();
-            this.UpdateButton = new System.Windows.Forms.Button();
-            this.RemoveButton = new System.Windows.Forms.Button();
-            this.DHCP_ServerList = new System.Windows.Forms.ListBox();
-            this.AddDHCP_ServerButton = new System.Windows.Forms.Button();
-            this.NewDHCP_ServerBox = new System.Windows.Forms.TextBox();
-            this.AddNewDHCP_ServerLabel = new System.Windows.Forms.Label();
-            this.contextMenuStrip1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            this.AddClientTable.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.SuspendLayout();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            programToolStripMenuItem = new ToolStripMenuItem();
+            menuStrip1 = new MenuStrip();
+            programToolStripMenuItem1 = new ToolStripMenuItem();
+            closeProgramToolStripMenuItem = new ToolStripMenuItem();
+            helpToolStripMenuItem = new ToolStripMenuItem();
+            AddClientTable = new TabControl();
+            tabPage1 = new TabPage();
+            GenerateMacButton = new Button();
+            Clear_button = new Button();
+            Copy_Button = new Button();
+            DHCP_ServerLabel = new Label();
+            MacAddressBox = new TextBox();
+            MacAddresLabel = new Label();
+            UploadSpeedBox = new TextBox();
+            DHCP_Value = new ComboBox();
+            UploadSpeedLabel = new Label();
+            DownloadSpeedLabel = new Label();
+            DownloadSpeedBox = new TextBox();
+            print_btn = new Button();
+            clientInfoPrint = new RichTextBox();
+            Client_info = new Label();
+            description_label = new Label();
+            IPadress_label = new Label();
+            ipaddress_box = new TextBox();
+            description_box = new TextBox();
+            tabPage2 = new TabPage();
+            Edit_Button = new Button();
+            Update_Box = new TextBox();
+            UpdateButton = new Button();
+            RemoveButton = new Button();
+            DHCP_ServerList = new ListBox();
+            AddDHCP_ServerButton = new Button();
+            NewDHCP_ServerBox = new TextBox();
+            AddNewDHCP_ServerLabel = new Label();
+            contextMenuStrip1.SuspendLayout();
+            menuStrip1.SuspendLayout();
+            AddClientTable.SuspendLayout();
+            tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
+            SuspendLayout();
             // 
             // contextMenuStrip1
             // 
-            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.programToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(136, 28);
+            contextMenuStrip1.ImageScalingSize = new Size(20, 20);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { programToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(121, 26);
             // 
             // programToolStripMenuItem
             // 
-            this.programToolStripMenuItem.Name = "programToolStripMenuItem";
-            this.programToolStripMenuItem.Size = new System.Drawing.Size(135, 24);
-            this.programToolStripMenuItem.Text = "Program";
+            programToolStripMenuItem.Name = "programToolStripMenuItem";
+            programToolStripMenuItem.Size = new Size(120, 22);
+            programToolStripMenuItem.Text = "Program";
             // 
             // menuStrip1
             // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.programToolStripMenuItem1,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(7, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(989, 30);
-            this.menuStrip1.TabIndex = 3;
-            this.menuStrip1.Text = "menuStrip1";
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { programToolStripMenuItem1, helpToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(865, 24);
+            menuStrip1.TabIndex = 3;
+            menuStrip1.Text = "menuStrip1";
             // 
             // programToolStripMenuItem1
             // 
-            this.programToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.closeProgramToolStripMenuItem});
-            this.programToolStripMenuItem1.Name = "programToolStripMenuItem1";
-            this.programToolStripMenuItem1.Size = new System.Drawing.Size(80, 24);
-            this.programToolStripMenuItem1.Text = "Program";
+            programToolStripMenuItem1.DropDownItems.AddRange(new ToolStripItem[] { closeProgramToolStripMenuItem });
+            programToolStripMenuItem1.Name = "programToolStripMenuItem1";
+            programToolStripMenuItem1.Size = new Size(65, 20);
+            programToolStripMenuItem1.Text = "Program";
             // 
             // closeProgramToolStripMenuItem
             // 
-            this.closeProgramToolStripMenuItem.Name = "closeProgramToolStripMenuItem";
-            this.closeProgramToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.closeProgramToolStripMenuItem.Text = "Close Program";
-            this.closeProgramToolStripMenuItem.Click += new System.EventHandler(this.closeProgramToolStripMenuItem_Click);
+            closeProgramToolStripMenuItem.Name = "closeProgramToolStripMenuItem";
+            closeProgramToolStripMenuItem.Size = new Size(152, 22);
+            closeProgramToolStripMenuItem.Text = "Close Program";
+            closeProgramToolStripMenuItem.Click += closeProgramToolStripMenuItem_Click;
             // 
             // helpToolStripMenuItem
             // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
-            this.helpToolStripMenuItem.Text = "Help";
+            helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            helpToolStripMenuItem.Size = new Size(44, 20);
+            helpToolStripMenuItem.Text = "Help";
             // 
             // AddClientTable
             // 
-            this.AddClientTable.Controls.Add(this.tabPage1);
-            this.AddClientTable.Controls.Add(this.tabPage2);
-            this.AddClientTable.Location = new System.Drawing.Point(0, 33);
-            this.AddClientTable.Name = "AddClientTable";
-            this.AddClientTable.SelectedIndex = 0;
-            this.AddClientTable.Size = new System.Drawing.Size(990, 549);
-            this.AddClientTable.TabIndex = 1;
+            AddClientTable.Controls.Add(tabPage1);
+            AddClientTable.Controls.Add(tabPage2);
+            AddClientTable.Location = new Point(0, 25);
+            AddClientTable.Margin = new Padding(3, 2, 3, 2);
+            AddClientTable.Name = "AddClientTable";
+            AddClientTable.SelectedIndex = 0;
+            AddClientTable.Size = new Size(866, 412);
+            AddClientTable.TabIndex = 1;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.GenerateMacButton);
-            this.tabPage1.Controls.Add(this.Clear_button);
-            this.tabPage1.Controls.Add(this.Copy_Button);
-            this.tabPage1.Controls.Add(this.DHCP_ServerLabel);
-            this.tabPage1.Controls.Add(this.MacAddressBox);
-            this.tabPage1.Controls.Add(this.MacAddresLabel);
-            this.tabPage1.Controls.Add(this.UploadSpeedBox);
-            this.tabPage1.Controls.Add(this.DHCP_Value);
-            this.tabPage1.Controls.Add(this.UploadSpeedLabel);
-            this.tabPage1.Controls.Add(this.DownloadSpeedLabel);
-            this.tabPage1.Controls.Add(this.DownloadSpeedBox);
-            this.tabPage1.Controls.Add(this.print_btn);
-            this.tabPage1.Controls.Add(this.clientInfoPrint);
-            this.tabPage1.Controls.Add(this.Client_info);
-            this.tabPage1.Controls.Add(this.description_label);
-            this.tabPage1.Controls.Add(this.IPadress_label);
-            this.tabPage1.Controls.Add(this.ipaddress_box);
-            this.tabPage1.Controls.Add(this.description_box);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(982, 516);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Add Client";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Controls.Add(GenerateMacButton);
+            tabPage1.Controls.Add(Clear_button);
+            tabPage1.Controls.Add(Copy_Button);
+            tabPage1.Controls.Add(DHCP_ServerLabel);
+            tabPage1.Controls.Add(MacAddressBox);
+            tabPage1.Controls.Add(MacAddresLabel);
+            tabPage1.Controls.Add(UploadSpeedBox);
+            tabPage1.Controls.Add(DHCP_Value);
+            tabPage1.Controls.Add(UploadSpeedLabel);
+            tabPage1.Controls.Add(DownloadSpeedLabel);
+            tabPage1.Controls.Add(DownloadSpeedBox);
+            tabPage1.Controls.Add(print_btn);
+            tabPage1.Controls.Add(clientInfoPrint);
+            tabPage1.Controls.Add(Client_info);
+            tabPage1.Controls.Add(description_label);
+            tabPage1.Controls.Add(IPadress_label);
+            tabPage1.Controls.Add(ipaddress_box);
+            tabPage1.Controls.Add(description_box);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Margin = new Padding(3, 2, 3, 2);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3, 2, 3, 2);
+            tabPage1.Size = new Size(858, 384);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "Add Client";
+            tabPage1.UseVisualStyleBackColor = true;
             // 
             // GenerateMacButton
             // 
-            this.GenerateMacButton.Location = new System.Drawing.Point(856, 100);
-            this.GenerateMacButton.Name = "GenerateMacButton";
-            this.GenerateMacButton.Size = new System.Drawing.Size(94, 29);
-            this.GenerateMacButton.TabIndex = 27;
-            this.GenerateMacButton.Text = "Gen Mac";
-            this.GenerateMacButton.UseVisualStyleBackColor = true;
-            this.GenerateMacButton.Click += new System.EventHandler(this.GenerateMacButton_Click);
+            GenerateMacButton.Location = new Point(749, 75);
+            GenerateMacButton.Margin = new Padding(3, 2, 3, 2);
+            GenerateMacButton.Name = "GenerateMacButton";
+            GenerateMacButton.Size = new Size(82, 22);
+            GenerateMacButton.TabIndex = 27;
+            GenerateMacButton.Text = "Gen Mac";
+            GenerateMacButton.UseVisualStyleBackColor = true;
+            GenerateMacButton.Click += GenerateMacButton_Click;
             // 
             // Clear_button
             // 
-            this.Clear_button.Location = new System.Drawing.Point(38, 447);
-            this.Clear_button.Name = "Clear_button";
-            this.Clear_button.Size = new System.Drawing.Size(94, 29);
-            this.Clear_button.TabIndex = 26;
-            this.Clear_button.Text = "Clear";
-            this.Clear_button.UseVisualStyleBackColor = true;
-            this.Clear_button.Click += new System.EventHandler(this.Clear_button_Click);
+            Clear_button.Location = new Point(33, 335);
+            Clear_button.Margin = new Padding(3, 2, 3, 2);
+            Clear_button.Name = "Clear_button";
+            Clear_button.Size = new Size(82, 22);
+            Clear_button.TabIndex = 26;
+            Clear_button.Text = "Clear";
+            Clear_button.UseVisualStyleBackColor = true;
+            Clear_button.Click += Clear_button_Click;
             // 
             // Copy_Button
             // 
-            this.Copy_Button.Location = new System.Drawing.Point(717, 447);
-            this.Copy_Button.Name = "Copy_Button";
-            this.Copy_Button.Size = new System.Drawing.Size(94, 29);
-            this.Copy_Button.TabIndex = 9;
-            this.Copy_Button.Text = "Copy";
-            this.Copy_Button.UseVisualStyleBackColor = true;
-            this.Copy_Button.Click += new System.EventHandler(this.Copy_Button_Click);
+            Copy_Button.Enabled = false;
+            Copy_Button.Location = new Point(627, 335);
+            Copy_Button.Margin = new Padding(3, 2, 3, 2);
+            Copy_Button.Name = "Copy_Button";
+            Copy_Button.Size = new Size(82, 22);
+            Copy_Button.TabIndex = 9;
+            Copy_Button.Text = "Copy";
+            Copy_Button.UseVisualStyleBackColor = true;
+            Copy_Button.Click += Copy_Button_Click;
             // 
             // DHCP_ServerLabel
             // 
-            this.DHCP_ServerLabel.AutoSize = true;
-            this.DHCP_ServerLabel.Location = new System.Drawing.Point(293, 108);
-            this.DHCP_ServerLabel.Name = "DHCP_ServerLabel";
-            this.DHCP_ServerLabel.Size = new System.Drawing.Size(93, 20);
-            this.DHCP_ServerLabel.TabIndex = 25;
-            this.DHCP_ServerLabel.Text = "DHCP Server";
+            DHCP_ServerLabel.AutoSize = true;
+            DHCP_ServerLabel.Location = new Point(256, 81);
+            DHCP_ServerLabel.Name = "DHCP_ServerLabel";
+            DHCP_ServerLabel.Size = new Size(74, 15);
+            DHCP_ServerLabel.TabIndex = 25;
+            DHCP_ServerLabel.Text = "DHCP Server";
             // 
             // MacAddressBox
             // 
-            this.MacAddressBox.Location = new System.Drawing.Point(621, 100);
-            this.MacAddressBox.Name = "MacAddressBox";
-            this.MacAddressBox.Size = new System.Drawing.Size(190, 27);
-            this.MacAddressBox.TabIndex = 6;
+            MacAddressBox.Location = new Point(543, 75);
+            MacAddressBox.Margin = new Padding(3, 2, 3, 2);
+            MacAddressBox.Name = "MacAddressBox";
+            MacAddressBox.Size = new Size(167, 23);
+            MacAddressBox.TabIndex = 6;
             // 
             // MacAddresLabel
             // 
-            this.MacAddresLabel.AutoSize = true;
-            this.MacAddresLabel.Location = new System.Drawing.Point(621, 74);
-            this.MacAddresLabel.Name = "MacAddresLabel";
-            this.MacAddresLabel.Size = new System.Drawing.Size(98, 20);
-            this.MacAddresLabel.TabIndex = 23;
-            this.MacAddresLabel.Text = "MAC Address";
+            MacAddresLabel.AutoSize = true;
+            MacAddresLabel.Location = new Point(543, 56);
+            MacAddresLabel.Name = "MacAddresLabel";
+            MacAddresLabel.Size = new Size(79, 15);
+            MacAddresLabel.TabIndex = 23;
+            MacAddresLabel.Text = "MAC Address";
             // 
             // UploadSpeedBox
             // 
-            this.UploadSpeedBox.Location = new System.Drawing.Point(141, 133);
-            this.UploadSpeedBox.Name = "UploadSpeedBox";
-            this.UploadSpeedBox.Size = new System.Drawing.Size(78, 27);
-            this.UploadSpeedBox.TabIndex = 3;
-            this.UploadSpeedBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.UploadSpeedBox_KeyPress);
+            UploadSpeedBox.Location = new Point(123, 100);
+            UploadSpeedBox.Margin = new Padding(3, 2, 3, 2);
+            UploadSpeedBox.Name = "UploadSpeedBox";
+            UploadSpeedBox.Size = new Size(69, 23);
+            UploadSpeedBox.TabIndex = 3;
+            UploadSpeedBox.KeyPress += UploadSpeedBox_KeyPress;
             // 
             // DHCP_Value
             // 
-            this.DHCP_Value.FormattingEnabled = true;
-            this.DHCP_Value.Location = new System.Drawing.Point(293, 132);
-            this.DHCP_Value.Name = "DHCP_Value";
-            this.DHCP_Value.Size = new System.Drawing.Size(278, 28);
-            this.DHCP_Value.TabIndex = 5;
+            DHCP_Value.FormattingEnabled = true;
+            DHCP_Value.Location = new Point(256, 99);
+            DHCP_Value.Margin = new Padding(3, 2, 3, 2);
+            DHCP_Value.Name = "DHCP_Value";
+            DHCP_Value.Size = new Size(244, 23);
+            DHCP_Value.TabIndex = 5;
             // 
             // UploadSpeedLabel
             // 
-            this.UploadSpeedLabel.AutoSize = true;
-            this.UploadSpeedLabel.Location = new System.Drawing.Point(141, 107);
-            this.UploadSpeedLabel.Name = "UploadSpeedLabel";
-            this.UploadSpeedLabel.Size = new System.Drawing.Size(58, 20);
-            this.UploadSpeedLabel.TabIndex = 22;
-            this.UploadSpeedLabel.Text = "Upload";
+            UploadSpeedLabel.AutoSize = true;
+            UploadSpeedLabel.Location = new Point(123, 80);
+            UploadSpeedLabel.Name = "UploadSpeedLabel";
+            UploadSpeedLabel.Size = new Size(45, 15);
+            UploadSpeedLabel.TabIndex = 22;
+            UploadSpeedLabel.Text = "Upload";
             // 
             // DownloadSpeedLabel
             // 
-            this.DownloadSpeedLabel.AutoSize = true;
-            this.DownloadSpeedLabel.Location = new System.Drawing.Point(38, 107);
-            this.DownloadSpeedLabel.Name = "DownloadSpeedLabel";
-            this.DownloadSpeedLabel.Size = new System.Drawing.Size(78, 20);
-            this.DownloadSpeedLabel.TabIndex = 21;
-            this.DownloadSpeedLabel.Text = "Download";
+            DownloadSpeedLabel.AutoSize = true;
+            DownloadSpeedLabel.Location = new Point(33, 80);
+            DownloadSpeedLabel.Name = "DownloadSpeedLabel";
+            DownloadSpeedLabel.Size = new Size(61, 15);
+            DownloadSpeedLabel.TabIndex = 21;
+            DownloadSpeedLabel.Text = "Download";
             // 
             // DownloadSpeedBox
             // 
-            this.DownloadSpeedBox.Location = new System.Drawing.Point(38, 133);
-            this.DownloadSpeedBox.Name = "DownloadSpeedBox";
-            this.DownloadSpeedBox.Size = new System.Drawing.Size(78, 27);
-            this.DownloadSpeedBox.TabIndex = 2;
-            this.DownloadSpeedBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DownloadSpeedBox_KeyPress);
+            DownloadSpeedBox.Location = new Point(33, 100);
+            DownloadSpeedBox.Margin = new Padding(3, 2, 3, 2);
+            DownloadSpeedBox.Name = "DownloadSpeedBox";
+            DownloadSpeedBox.Size = new Size(69, 23);
+            DownloadSpeedBox.TabIndex = 2;
+            DownloadSpeedBox.KeyPress += DownloadSpeedBox_KeyPress;
             // 
             // print_btn
             // 
-            this.print_btn.Location = new System.Drawing.Point(843, 445);
-            this.print_btn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.print_btn.Name = "print_btn";
-            this.print_btn.Size = new System.Drawing.Size(86, 31);
-            this.print_btn.TabIndex = 8;
-            this.print_btn.Text = "Print Info";
-            this.print_btn.UseVisualStyleBackColor = true;
-            this.print_btn.Click += new System.EventHandler(this.print_btn_Click);
+            print_btn.Location = new Point(738, 334);
+            print_btn.Name = "print_btn";
+            print_btn.Size = new Size(75, 23);
+            print_btn.TabIndex = 8;
+            print_btn.Text = "Print Info";
+            print_btn.UseVisualStyleBackColor = true;
+            print_btn.Click += print_btn_Click;
             // 
             // clientInfoPrint
             // 
-            this.clientInfoPrint.BackColor = System.Drawing.Color.White;
-            this.clientInfoPrint.Location = new System.Drawing.Point(38, 212);
-            this.clientInfoPrint.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.clientInfoPrint.Name = "clientInfoPrint";
-            this.clientInfoPrint.ReadOnly = true;
-            this.clientInfoPrint.Size = new System.Drawing.Size(891, 225);
-            this.clientInfoPrint.TabIndex = 7;
-            this.clientInfoPrint.Text = "";
+            clientInfoPrint.BackColor = Color.White;
+            clientInfoPrint.Location = new Point(33, 159);
+            clientInfoPrint.Name = "clientInfoPrint";
+            clientInfoPrint.ReadOnly = true;
+            clientInfoPrint.Size = new Size(780, 170);
+            clientInfoPrint.TabIndex = 7;
+            clientInfoPrint.Text = "";
+            clientInfoPrint.TextChanged += clientInfoPrint_TextChanged;
             // 
             // Client_info
             // 
-            this.Client_info.AutoSize = true;
-            this.Client_info.Location = new System.Drawing.Point(38, 188);
-            this.Client_info.Name = "Client_info";
-            this.Client_info.Size = new System.Drawing.Size(116, 20);
-            this.Client_info.TabIndex = 16;
-            this.Client_info.Text = "Client add value";
+            Client_info.AutoSize = true;
+            Client_info.Location = new Point(33, 141);
+            Client_info.Name = "Client_info";
+            Client_info.Size = new Size(92, 15);
+            Client_info.TabIndex = 16;
+            Client_info.Text = "Client add value";
             // 
             // description_label
             // 
-            this.description_label.AutoSize = true;
-            this.description_label.Location = new System.Drawing.Point(293, 17);
-            this.description_label.Name = "description_label";
-            this.description_label.Size = new System.Drawing.Size(148, 20);
-            this.description_label.TabIndex = 14;
-            this.description_label.Text = "Put client description";
+            description_label.AutoSize = true;
+            description_label.Location = new Point(256, 13);
+            description_label.Name = "description_label";
+            description_label.Size = new Size(119, 15);
+            description_label.TabIndex = 14;
+            description_label.Text = "Put client description";
             // 
             // IPadress_label
             // 
-            this.IPadress_label.AutoSize = true;
-            this.IPadress_label.Location = new System.Drawing.Point(38, 17);
-            this.IPadress_label.Name = "IPadress_label";
-            this.IPadress_label.Size = new System.Drawing.Size(101, 20);
-            this.IPadress_label.TabIndex = 15;
-            this.IPadress_label.Text = "Put IP address";
+            IPadress_label.AutoSize = true;
+            IPadress_label.Location = new Point(33, 13);
+            IPadress_label.Name = "IPadress_label";
+            IPadress_label.Size = new Size(81, 15);
+            IPadress_label.TabIndex = 15;
+            IPadress_label.Text = "Put IP address";
             // 
             // ipaddress_box
             // 
-            this.ipaddress_box.Location = new System.Drawing.Point(38, 41);
-            this.ipaddress_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ipaddress_box.Name = "ipaddress_box";
-            this.ipaddress_box.Size = new System.Drawing.Size(190, 27);
-            this.ipaddress_box.TabIndex = 0;
+            ipaddress_box.Location = new Point(33, 31);
+            ipaddress_box.Name = "ipaddress_box";
+            ipaddress_box.Size = new Size(167, 23);
+            ipaddress_box.TabIndex = 0;
             // 
             // description_box
             // 
-            this.description_box.Location = new System.Drawing.Point(293, 41);
-            this.description_box.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.description_box.Name = "description_box";
-            this.description_box.Size = new System.Drawing.Size(278, 27);
-            this.description_box.TabIndex = 1;
+            description_box.Location = new Point(256, 31);
+            description_box.Name = "description_box";
+            description_box.Size = new Size(244, 23);
+            description_box.TabIndex = 1;
             // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.Edit_Button);
-            this.tabPage2.Controls.Add(this.Update_Box);
-            this.tabPage2.Controls.Add(this.UpdateButton);
-            this.tabPage2.Controls.Add(this.RemoveButton);
-            this.tabPage2.Controls.Add(this.DHCP_ServerList);
-            this.tabPage2.Controls.Add(this.AddDHCP_ServerButton);
-            this.tabPage2.Controls.Add(this.NewDHCP_ServerBox);
-            this.tabPage2.Controls.Add(this.AddNewDHCP_ServerLabel);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(982, 516);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Add DHCP Server";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            tabPage2.Controls.Add(Edit_Button);
+            tabPage2.Controls.Add(Update_Box);
+            tabPage2.Controls.Add(UpdateButton);
+            tabPage2.Controls.Add(RemoveButton);
+            tabPage2.Controls.Add(DHCP_ServerList);
+            tabPage2.Controls.Add(AddDHCP_ServerButton);
+            tabPage2.Controls.Add(NewDHCP_ServerBox);
+            tabPage2.Controls.Add(AddNewDHCP_ServerLabel);
+            tabPage2.Location = new Point(4, 24);
+            tabPage2.Margin = new Padding(3, 2, 3, 2);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3, 2, 3, 2);
+            tabPage2.Size = new Size(858, 384);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Add DHCP Server";
+            tabPage2.UseVisualStyleBackColor = true;
             // 
             // Edit_Button
             // 
-            this.Edit_Button.Location = new System.Drawing.Point(432, 136);
-            this.Edit_Button.Name = "Edit_Button";
-            this.Edit_Button.Size = new System.Drawing.Size(94, 29);
-            this.Edit_Button.TabIndex = 8;
-            this.Edit_Button.Text = "Edit";
-            this.Edit_Button.UseVisualStyleBackColor = true;
-            this.Edit_Button.Click += new System.EventHandler(this.Edit_Button_Click);
+            Edit_Button.Location = new Point(378, 102);
+            Edit_Button.Margin = new Padding(3, 2, 3, 2);
+            Edit_Button.Name = "Edit_Button";
+            Edit_Button.Size = new Size(82, 22);
+            Edit_Button.TabIndex = 8;
+            Edit_Button.Text = "Edit";
+            Edit_Button.UseVisualStyleBackColor = true;
+            Edit_Button.Click += Edit_Button_Click;
             // 
             // Update_Box
             // 
-            this.Update_Box.Location = new System.Drawing.Point(54, 402);
-            this.Update_Box.Name = "Update_Box";
-            this.Update_Box.Size = new System.Drawing.Size(231, 27);
-            this.Update_Box.TabIndex = 7;
+            Update_Box.Location = new Point(47, 302);
+            Update_Box.Margin = new Padding(3, 2, 3, 2);
+            Update_Box.Name = "Update_Box";
+            Update_Box.Size = new Size(203, 23);
+            Update_Box.TabIndex = 7;
             // 
             // UpdateButton
             // 
-            this.UpdateButton.Location = new System.Drawing.Point(315, 402);
-            this.UpdateButton.Name = "UpdateButton";
-            this.UpdateButton.Size = new System.Drawing.Size(94, 29);
-            this.UpdateButton.TabIndex = 6;
-            this.UpdateButton.Text = "Update";
-            this.UpdateButton.UseVisualStyleBackColor = true;
-            this.UpdateButton.Click += new System.EventHandler(this.UpdateButton_Click);
+            UpdateButton.Location = new Point(276, 302);
+            UpdateButton.Margin = new Padding(3, 2, 3, 2);
+            UpdateButton.Name = "UpdateButton";
+            UpdateButton.Size = new Size(82, 22);
+            UpdateButton.TabIndex = 6;
+            UpdateButton.Text = "Update";
+            UpdateButton.UseVisualStyleBackColor = true;
+            UpdateButton.Click += UpdateButton_Click;
             // 
             // RemoveButton
             // 
-            this.RemoveButton.Location = new System.Drawing.Point(432, 189);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(94, 29);
-            this.RemoveButton.TabIndex = 5;
-            this.RemoveButton.Text = "Remove";
-            this.RemoveButton.UseVisualStyleBackColor = true;
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            RemoveButton.Location = new Point(378, 142);
+            RemoveButton.Margin = new Padding(3, 2, 3, 2);
+            RemoveButton.Name = "RemoveButton";
+            RemoveButton.Size = new Size(82, 22);
+            RemoveButton.TabIndex = 5;
+            RemoveButton.Text = "Remove";
+            RemoveButton.UseVisualStyleBackColor = true;
+            RemoveButton.Click += RemoveButton_Click;
             // 
             // DHCP_ServerList
             // 
-            this.DHCP_ServerList.FormattingEnabled = true;
-            this.DHCP_ServerList.ItemHeight = 20;
-            this.DHCP_ServerList.Location = new System.Drawing.Point(54, 136);
-            this.DHCP_ServerList.Name = "DHCP_ServerList";
-            this.DHCP_ServerList.Size = new System.Drawing.Size(355, 244);
-            this.DHCP_ServerList.TabIndex = 4;
+            DHCP_ServerList.FormattingEnabled = true;
+            DHCP_ServerList.ItemHeight = 15;
+            DHCP_ServerList.Location = new Point(47, 102);
+            DHCP_ServerList.Margin = new Padding(3, 2, 3, 2);
+            DHCP_ServerList.Name = "DHCP_ServerList";
+            DHCP_ServerList.Size = new Size(311, 184);
+            DHCP_ServerList.TabIndex = 4;
             // 
             // AddDHCP_ServerButton
             // 
-            this.AddDHCP_ServerButton.Location = new System.Drawing.Point(315, 66);
-            this.AddDHCP_ServerButton.Name = "AddDHCP_ServerButton";
-            this.AddDHCP_ServerButton.Size = new System.Drawing.Size(94, 29);
-            this.AddDHCP_ServerButton.TabIndex = 3;
-            this.AddDHCP_ServerButton.Text = "Add";
-            this.AddDHCP_ServerButton.UseVisualStyleBackColor = true;
-            this.AddDHCP_ServerButton.Click += new System.EventHandler(this.AddDHCP_ServerButton_Click);
+            AddDHCP_ServerButton.Location = new Point(276, 50);
+            AddDHCP_ServerButton.Margin = new Padding(3, 2, 3, 2);
+            AddDHCP_ServerButton.Name = "AddDHCP_ServerButton";
+            AddDHCP_ServerButton.Size = new Size(82, 22);
+            AddDHCP_ServerButton.TabIndex = 3;
+            AddDHCP_ServerButton.Text = "Add";
+            AddDHCP_ServerButton.UseVisualStyleBackColor = true;
+            AddDHCP_ServerButton.Click += AddDHCP_ServerButton_Click;
             // 
             // NewDHCP_ServerBox
             // 
-            this.NewDHCP_ServerBox.Location = new System.Drawing.Point(54, 66);
-            this.NewDHCP_ServerBox.Name = "NewDHCP_ServerBox";
-            this.NewDHCP_ServerBox.Size = new System.Drawing.Size(202, 27);
-            this.NewDHCP_ServerBox.TabIndex = 2;
+            NewDHCP_ServerBox.Location = new Point(47, 50);
+            NewDHCP_ServerBox.Margin = new Padding(3, 2, 3, 2);
+            NewDHCP_ServerBox.Name = "NewDHCP_ServerBox";
+            NewDHCP_ServerBox.Size = new Size(177, 23);
+            NewDHCP_ServerBox.TabIndex = 2;
             // 
             // AddNewDHCP_ServerLabel
             // 
-            this.AddNewDHCP_ServerLabel.AutoSize = true;
-            this.AddNewDHCP_ServerLabel.Location = new System.Drawing.Point(54, 43);
-            this.AddNewDHCP_ServerLabel.Name = "AddNewDHCP_ServerLabel";
-            this.AddNewDHCP_ServerLabel.Size = new System.Drawing.Size(203, 20);
-            this.AddNewDHCP_ServerLabel.TabIndex = 0;
-            this.AddNewDHCP_ServerLabel.Text = "Paste new DHCP Server name";
+            AddNewDHCP_ServerLabel.AutoSize = true;
+            AddNewDHCP_ServerLabel.Location = new Point(47, 32);
+            AddNewDHCP_ServerLabel.Name = "AddNewDHCP_ServerLabel";
+            AddNewDHCP_ServerLabel.Size = new Size(163, 15);
+            AddNewDHCP_ServerLabel.TabIndex = 0;
+            AddNewDHCP_ServerLabel.Text = "Paste new DHCP Server name";
             // 
             // MikrotikAddClient
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(989, 573);
-            this.Controls.Add(this.AddClientTable);
-            this.Controls.Add(this.menuStrip1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "MikrotikAddClient";
-            this.Text = "Mikrotik Client Add";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.contextMenuStrip1.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.AddClientTable.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(865, 430);
+            Controls.Add(AddClientTable);
+            Controls.Add(menuStrip1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MainMenuStrip = menuStrip1;
+            Name = "MikrotikAddClient";
+            Text = "Mikrotik Client Add";
+            Load += Form1_Load;
+            contextMenuStrip1.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            AddClientTable.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

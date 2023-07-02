@@ -32,8 +32,37 @@ namespace MikrotikAddClient
             UploadSpeed = int.Parse(UploadSpeedBox.Text);
             MAC_Address = MacAddressBox.Text;
             DHCP_Server = DHCP_Value.Text;
+            int DownloadBurst = 0;
+            int UploadBurst = 0;
 
-            queue = "/queue simple\r\n add burst-limit=" + ((int)(UploadSpeed * 1.1)) + "M/" + ((int)(DownloadSpeed * 1.1)) + "M burst-threshold=" + UploadSpeed + "M/" + DownloadSpeed + "M burst-time=8s/8s max-limit=" + UploadSpeed + "M/" + DownloadSpeed + "M name=" + clientDescription + " queue=wireless-default/wireless-default target=" + ipAddress + " \r\n";
+
+            if (DownloadSpeed < 10)
+            {
+                DownloadBurst = DownloadSpeed + 2;
+            }
+            else if (DownloadSpeed > 1000)
+            {
+                DownloadSpeed = 1000;
+            }
+            else
+            {
+                DownloadBurst = ((int)(DownloadSpeed * 1.1));
+            }
+
+            if (UploadSpeed < 10)
+            {
+                UploadBurst = DownloadSpeed + 2;
+            }
+            else if (UploadSpeed > 1000)
+            {
+                UploadSpeed = 1000;
+            }
+            else
+            {
+                UploadBurst = ((int)(UploadSpeed * 1.1));
+            }
+
+            queue = "/queue simple\r\n add burst-limit=" + DownloadBurst + "M/" + UploadBurst + "M burst-threshold=" + UploadSpeed + "M/" + DownloadSpeed + "M burst-time=8s/8s max-limit=" + UploadSpeed + "M/" + DownloadSpeed + "M name=" + clientDescription + " queue=wireless-default/wireless-default target=" + ipAddress + " \r\n"; dhcpleases = "/delay 1 \r\n/ip dhcp-server lease\r\n add address=" + ipAddress + " always-broadcast=yes comment=" + clientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server + " \r\n";
             dhcpleases = "/delay 1 \r\n/ip dhcp-server lease\r\n add address=" + ipAddress + " always-broadcast=yes comment=" + clientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server + " \r\n";
             firewall_list = "/delay 1 \r\n/ip firewall address-list\r\n add address=" + ipAddress + " comment=" + clientDescription + " list=klienci \r\n";
 
@@ -51,15 +80,9 @@ namespace MikrotikAddClient
                 using (StreamWriter sw = File.CreateText(FileName))
                 {
                     sw.WriteLine("List is Empty");
-                    //foreach (var line in employeeList.Items)
-                    //{
-                    //    sw.WriteLine(((Employee)line).FirstName);
-                    //    sw.WriteLine(((Employee)line).LastName);
-                    //    sw.WriteLine(((Employee)line).JobTitle);
-                    //}
                 }
             }
-            
+
             FromFile.AddRange(File.ReadAllLines(FileName));
             UpdateForm();
         }
@@ -134,6 +157,7 @@ namespace MikrotikAddClient
             UploadSpeedBox.Clear();
             MacAddressBox.Clear();
             clientInfoPrint.Clear();
+            DHCP_Value.SelectedItem = null;
         }
 
         private void DownloadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -154,6 +178,18 @@ namespace MikrotikAddClient
         private void GenerateMacButton_Click(object sender, EventArgs e)
         {
             MacAddressBox.Text = GetRandomMacAddress();
+        }
+
+        private void clientInfoPrint_TextChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(clientInfoPrint.Text))
+            {
+                Copy_Button.Enabled = false;
+            }
+            else
+            {
+                Copy_Button.Enabled = true;
+            }
         }
     }
 }
