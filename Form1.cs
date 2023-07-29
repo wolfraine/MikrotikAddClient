@@ -1,6 +1,8 @@
 using System.IO;
+using System.Net;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
+using System.Windows.Forms.VisualStyles;
 
 namespace MikrotikAddClient
 {
@@ -16,8 +18,8 @@ namespace MikrotikAddClient
         int DownloadSpeed = 0;
         string DHCP_Server = "";
         string MAC_Address = "";
-        List<string> FromFile = new List<string>();
-        string FileName = "DHCP-Servers.txt";
+        List<string> FromFile = new();
+        readonly string FileName = "DHCP-Servers.txt";
 
         public MikrotikAddClient()
         {
@@ -77,10 +79,8 @@ namespace MikrotikAddClient
 
             if (!File.Exists(FileName))
             {
-                using (StreamWriter sw = File.CreateText(FileName))
-                {
-                    sw.WriteLine("List is Empty");
-                }
+                using StreamWriter sw = File.CreateText(FileName);
+                sw.WriteLine("List is Empty");
             }
 
             FromFile.AddRange(File.ReadAllLines(FileName));
@@ -97,12 +97,10 @@ namespace MikrotikAddClient
 
         private void SaveToFile()
         {
-            using (StreamWriter sw = File.CreateText(FileName))
+            using StreamWriter sw = File.CreateText(FileName);
+            foreach (var line in FromFile)
             {
-                foreach (var line in FromFile)
-                {
-                    sw.WriteLine(line);
-                }
+                sw.WriteLine(line);
             }
         }
 
@@ -190,6 +188,31 @@ namespace MikrotikAddClient
             {
                 Copy_Button.Enabled = true;
             }
+        }
+
+        private void ipaddress_box_TextChanged(object sender, EventArgs e)
+        {
+            IPAddress ipAddress = null;
+            string tmp = ipaddress_box.Text;
+            bool isValidIp = tmp.Count(c => c == '.') == 3 && IPAddress.TryParse(tmp, out ipAddress);
+            if (ipaddress_box.Text == null)
+            {
+                Ip_Error.Text = "";
+                Ip_Error.Visible = false;
+            }
+            else if(isValidIp)
+            {
+                Ip_Error.Text = "Ip Addres is Correct";
+                Ip_Error.ForeColor = Color.Green;
+                Ip_Error.Visible = true;
+            }
+            else 
+            {
+                Ip_Error.Text = "This is not IP address";
+                Ip_Error.ForeColor = Color.Red;
+                Ip_Error.Visible = true;
+            }
+
         }
     }
 }

@@ -38,6 +38,7 @@
             helpToolStripMenuItem = new ToolStripMenuItem();
             AddClientTable = new TabControl();
             tabPage1 = new TabPage();
+            Ip_Error = new Label();
             GenerateMacButton = new Button();
             Clear_button = new Button();
             Copy_Button = new Button();
@@ -128,6 +129,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(Ip_Error);
             tabPage1.Controls.Add(GenerateMacButton);
             tabPage1.Controls.Add(Clear_button);
             tabPage1.Controls.Add(Copy_Button);
@@ -154,6 +156,16 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Add Client";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // Ip_Error
+            // 
+            Ip_Error.AutoSize = true;
+            Ip_Error.Location = new Point(33, 57);
+            Ip_Error.Name = "Ip_Error";
+            Ip_Error.Size = new Size(38, 15);
+            Ip_Error.TabIndex = 28;
+            Ip_Error.Text = "label1";
+            Ip_Error.Visible = false;
             // 
             // GenerateMacButton
             // 
@@ -314,6 +326,7 @@
             ipaddress_box.Name = "ipaddress_box";
             ipaddress_box.Size = new Size(167, 23);
             ipaddress_box.TabIndex = 0;
+            ipaddress_box.TextChanged += ipaddress_box_TextChanged;
             // 
             // description_box
             // 
@@ -484,5 +497,6 @@
         private Button Edit_Button;
         private Button Clear_button;
         private Button GenerateMacButton;
+        private Label Ip_Error;
     }
 }
