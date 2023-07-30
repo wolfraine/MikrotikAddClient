@@ -160,7 +160,7 @@
             // Ip_Error
             // 
             Ip_Error.AutoSize = true;
-            Ip_Error.Location = new Point(33, 57);
+            Ip_Error.Location = new Point(33, 56);
             Ip_Error.Name = "Ip_Error";
             Ip_Error.Size = new Size(38, 15);
             Ip_Error.TabIndex = 28;
@@ -214,6 +214,7 @@
             // 
             MacAddressBox.Location = new Point(543, 75);
             MacAddressBox.Margin = new Padding(3, 2, 3, 2);
+            MacAddressBox.MaxLength = 17;
             MacAddressBox.Name = "MacAddressBox";
             MacAddressBox.Size = new Size(167, 23);
             MacAddressBox.TabIndex = 6;
@@ -231,6 +232,7 @@
             // 
             UploadSpeedBox.Location = new Point(123, 100);
             UploadSpeedBox.Margin = new Padding(3, 2, 3, 2);
+            UploadSpeedBox.MaxLength = 4;
             UploadSpeedBox.Name = "UploadSpeedBox";
             UploadSpeedBox.Size = new Size(69, 23);
             UploadSpeedBox.TabIndex = 3;
@@ -267,6 +269,7 @@
             // 
             DownloadSpeedBox.Location = new Point(33, 100);
             DownloadSpeedBox.Margin = new Padding(3, 2, 3, 2);
+            DownloadSpeedBox.MaxLength = 4;
             DownloadSpeedBox.Name = "DownloadSpeedBox";
             DownloadSpeedBox.Size = new Size(69, 23);
             DownloadSpeedBox.TabIndex = 2;
@@ -323,10 +326,10 @@
             // ipaddress_box
             // 
             ipaddress_box.Location = new Point(33, 31);
+            ipaddress_box.MaxLength = 15;
             ipaddress_box.Name = "ipaddress_box";
             ipaddress_box.Size = new Size(167, 23);
             ipaddress_box.TabIndex = 0;
-            ipaddress_box.TextChanged += ipaddress_box_TextChanged;
             // 
             // description_box
             // 

@@ -4,22 +4,24 @@ using System.Windows.Forms;
 using System.Windows.Forms.Design;
 using System.Windows.Forms.VisualStyles;
 
+
 namespace MikrotikAddClient
 {
     public partial class MikrotikAddClient : Form
     {
-        string queue = "";
-        string dhcpleases = "";
-        string firewall_list = "";
-        string clipboardtext = "";
-        string ipAddress = "";
-        string clientDescription = "";
-        int UploadSpeed = 0;
-        int DownloadSpeed = 0;
-        string DHCP_Server = "";
-        string MAC_Address = "";
+        //string queue = "";
+        //string dhcpleases = "";
+        //string firewall_list = "";
+        string ClipboardText = "";
+        //string ipAddress = "";
+        //string clientDescription = "";
+        //int UploadSpeed = 0;
+        //int DownloadSpeed = 0;
+        //string DHCP_Server = "";
+        //string MAC_Address = "";
         List<string> FromFile = new();
         readonly string FileName = "DHCP-Servers.txt";
+
 
         public MikrotikAddClient()
         {
@@ -28,48 +30,54 @@ namespace MikrotikAddClient
 
         private void print_btn_Click(object sender, EventArgs e)
         {
-            ipAddress = ipaddress_box.Text;
-            clientDescription = description_box.Text;
-            DownloadSpeed = int.Parse(DownloadSpeedBox.Text);
-            UploadSpeed = int.Parse(UploadSpeedBox.Text);
-            MAC_Address = MacAddressBox.Text;
-            DHCP_Server = DHCP_Value.Text;
-            int DownloadBurst = 0;
-            int UploadBurst = 0;
+            ClientData clientData = new ClientData();
+            
+            clientData.IpAddress = ipaddress_box.Text;
+            clientData.ClientDescription = description_box.Text;
+            clientData.DownloadSpeed = int.Parse(DownloadSpeedBox.Text);
+            clientData.UploadSpeed = int.Parse(UploadSpeedBox.Text);
+            clientData.MAC_Address = MacAddressBox.Text;
+            clientData.DHCP_Server = DHCP_Value.Text;
 
-
-            if (DownloadSpeed < 10)
+            if (clientData.DownloadSpeed < 10)
             {
-                DownloadBurst = DownloadSpeed + 2;
+                clientData.DownloadBurst = clientData.DownloadSpeed + 2;
             }
-            else if (DownloadSpeed > 1000)
+            else if (clientData.DownloadSpeed > 1000)
             {
-                DownloadSpeed = 1000;
+                clientData.DownloadSpeed = 1000;
             }
             else
             {
-                DownloadBurst = ((int)(DownloadSpeed * 1.1));
+                clientData.DownloadBurst = ((int)(clientData.DownloadSpeed * 1.1));
             }
 
-            if (UploadSpeed < 10)
+            if (clientData.UploadSpeed < 10)
             {
-                UploadBurst = DownloadSpeed + 2;
+                clientData.UploadBurst = clientData.DownloadSpeed + 2;
             }
-            else if (UploadSpeed > 1000)
+            else if (clientData.UploadSpeed > 1000)
             {
-                UploadSpeed = 1000;
+                clientData.UploadSpeed = 1000;
             }
             else
             {
-                UploadBurst = ((int)(UploadSpeed * 1.1));
+                clientData.UploadBurst = ((int)(clientData.UploadSpeed * 1.1));
             }
 
-            queue = "/queue simple\r\n add burst-limit=" + DownloadBurst + "M/" + UploadBurst + "M burst-threshold=" + UploadSpeed + "M/" + DownloadSpeed + "M burst-time=8s/8s max-limit=" + UploadSpeed + "M/" + DownloadSpeed + "M name=" + clientDescription + " queue=wireless-default/wireless-default target=" + ipAddress + " \r\n"; dhcpleases = "/delay 1 \r\n/ip dhcp-server lease\r\n add address=" + ipAddress + " always-broadcast=yes comment=" + clientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server + " \r\n";
-            dhcpleases = "/delay 1 \r\n/ip dhcp-server lease\r\n add address=" + ipAddress + " always-broadcast=yes comment=" + clientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server + " \r\n";
-            firewall_list = "/delay 1 \r\n/ip firewall address-list\r\n add address=" + ipAddress + " comment=" + clientDescription + " list=klienci \r\n";
+            clientData.Queue = "/Queue simple\r\n add burst-limit=" + clientData.DownloadBurst + "M/" + clientData.UploadBurst + "M burst-threshold=" + clientData.UploadSpeed + "M/" + clientData.DownloadSpeed + "M burst-time=8s/8s max-limit=" + clientData.UploadSpeed + "M/" + clientData.DownloadSpeed + "M name=" + clientData.ClientDescription + " Queue=wireless-default/wireless-default target=" + clientData.IpAddress + " \r\n"; 
+            clientData.DhcpLeases = "/delay 1 \r\n/ip dhcp-server lease\r\n add address=" + clientData.IpAddress + " always-broadcast=yes comment=" + clientData.ClientDescription + " disabled=no mac-address=" + clientData.MAC_Address + " server=" + clientData.DHCP_Server + " \r\n";
+            clientData.FirewallList = "/delay 1 \r\n/ip firewall address-list\r\n add address=" + clientData.IpAddress + " comment=" + clientData.ClientDescription + " list=klienci \r\n";
 
-            clipboardtext = queue + dhcpleases + firewall_list;
-            clientInfoPrint.Text = clipboardtext;
+            ClipboardText = clientData.Queue + clientData.DhcpLeases + clientData.FirewallList;
+            if (description_box.Text.Length == 0)
+            {
+
+            }
+            else
+            {
+                clientInfoPrint.Text = ClipboardText;
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -123,7 +131,7 @@ namespace MikrotikAddClient
 
         private void Copy_Button_Click(object sender, EventArgs e)
         {
-            Clipboard.SetDataObject(clipboardtext);
+            Clipboard.SetDataObject(ClipboardText);
         }
 
         private void Edit_Button_Click(object sender, EventArgs e)
@@ -192,21 +200,21 @@ namespace MikrotikAddClient
 
         private void ipaddress_box_TextChanged(object sender, EventArgs e)
         {
-            IPAddress ipAddress = null;
             string tmp = ipaddress_box.Text;
-            bool isValidIp = tmp.Count(c => c == '.') == 3 && IPAddress.TryParse(tmp, out ipAddress);
+            bool isValidIp = tmp.Count(c => c == '.') == 3 && IPAddress.TryParse(tmp, out _);
             if (ipaddress_box.Text == null)
             {
                 Ip_Error.Text = "";
+                Ip_Error.ForeColor = Color.Black;
                 Ip_Error.Visible = false;
             }
-            else if(isValidIp)
+            else if (isValidIp)
             {
                 Ip_Error.Text = "Ip Addres is Correct";
                 Ip_Error.ForeColor = Color.Green;
                 Ip_Error.Visible = true;
             }
-            else 
+            else
             {
                 Ip_Error.Text = "This is not IP address";
                 Ip_Error.ForeColor = Color.Red;
