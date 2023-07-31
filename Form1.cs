@@ -91,6 +91,7 @@ namespace MikrotikAddClient
             FromFile.Insert(index, Update_Box.Text);
             SaveToFile();
             UpdateForm();
+            Update_Box.Clear();
         }
 
         private void RemoveButton_Click(object sender, EventArgs e)
@@ -114,7 +115,7 @@ namespace MikrotikAddClient
         private void DownloadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Input only numbers & backspace
-            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b')
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b');
         }
 
         private void UploadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -167,6 +168,30 @@ namespace MikrotikAddClient
                 Ip_Error.Visible = true;
             }
 
+        }
+
+        private void NewDHCP_ServerBox_TextChanged(object sender, EventArgs e)
+        {
+            if (NewDHCP_ServerBox.Text.Length == 0)
+            {
+                AddDHCP_ServerButton.Enabled = false;
+            }
+            else
+            {
+                AddDHCP_ServerButton.Enabled = true;
+            }
+        }
+
+        private void Update_Box_TextChanged(object sender, EventArgs e)
+        {
+            if (Update_Box.Text.Length == 0)
+            {
+                UpdateButton.Enabled = false;
+            }
+            else
+            {
+                UpdateButton.Enabled = true;
+            }
         }
     }
 }

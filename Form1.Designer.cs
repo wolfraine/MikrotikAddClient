@@ -375,9 +375,11 @@
             Update_Box.Name = "Update_Box";
             Update_Box.Size = new Size(203, 23);
             Update_Box.TabIndex = 7;
+            Update_Box.TextChanged += Update_Box_TextChanged;
             // 
             // UpdateButton
             // 
+            UpdateButton.Enabled = false;
             UpdateButton.Location = new Point(276, 302);
             UpdateButton.Margin = new Padding(3, 2, 3, 2);
             UpdateButton.Name = "UpdateButton";
@@ -410,6 +412,7 @@
             // 
             // AddDHCP_ServerButton
             // 
+            AddDHCP_ServerButton.Enabled = false;
             AddDHCP_ServerButton.Location = new Point(276, 50);
             AddDHCP_ServerButton.Margin = new Padding(3, 2, 3, 2);
             AddDHCP_ServerButton.Name = "AddDHCP_ServerButton";
@@ -426,6 +429,7 @@
             NewDHCP_ServerBox.Name = "NewDHCP_ServerBox";
             NewDHCP_ServerBox.Size = new Size(177, 23);
             NewDHCP_ServerBox.TabIndex = 2;
+            NewDHCP_ServerBox.TextChanged += NewDHCP_ServerBox_TextChanged;
             // 
             // AddNewDHCP_ServerLabel
             // 
