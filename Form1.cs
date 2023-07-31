@@ -9,19 +9,10 @@ namespace MikrotikAddClient
 {
     public partial class MikrotikAddClient : Form
     {
-        //string queue = "";
-        //string dhcpleases = "";
-        //string firewall_list = "";
         string ClipboardText = "";
-        //string ipAddress = "";
-        //string clientDescription = "";
-        //int UploadSpeed = 0;
-        //int DownloadSpeed = 0;
-        //string DHCP_Server = "";
-        //string MAC_Address = "";
         List<string> FromFile = new();
         readonly string FileName = "DHCP-Servers.txt";
-
+        ClientData clientData = new ClientData();
 
         public MikrotikAddClient()
         {
@@ -30,8 +21,8 @@ namespace MikrotikAddClient
 
         private void print_btn_Click(object sender, EventArgs e)
         {
-            ClientData clientData = new ClientData();
-            
+            //ClientData clientData = new ClientData();
+
             clientData.IpAddress = ipaddress_box.Text;
             clientData.ClientDescription = description_box.Text;
             clientData.DownloadSpeed = int.Parse(DownloadSpeedBox.Text);
@@ -39,52 +30,18 @@ namespace MikrotikAddClient
             clientData.MAC_Address = MacAddressBox.Text;
             clientData.DHCP_Server = DHCP_Value.Text;
 
-            if (clientData.DownloadSpeed < 10)
-            {
-                clientData.DownloadBurst = clientData.DownloadSpeed + 2;
-            }
-            else if (clientData.DownloadSpeed > 1000)
-            {
-                clientData.DownloadSpeed = 1000;
-            }
-            else
-            {
-                clientData.DownloadBurst = ((int)(clientData.DownloadSpeed * 1.1));
-            }
-
-            if (clientData.UploadSpeed < 10)
-            {
-                clientData.UploadBurst = clientData.DownloadSpeed + 2;
-            }
-            else if (clientData.UploadSpeed > 1000)
-            {
-                clientData.UploadSpeed = 1000;
-            }
-            else
-            {
-                clientData.UploadBurst = ((int)(clientData.UploadSpeed * 1.1));
-            }
-
-            clientData.Queue = "/Queue simple\r\n add burst-limit=" + clientData.DownloadBurst + "M/" + clientData.UploadBurst + "M burst-threshold=" + clientData.UploadSpeed + "M/" + clientData.DownloadSpeed + "M burst-time=8s/8s max-limit=" + clientData.UploadSpeed + "M/" + clientData.DownloadSpeed + "M name=" + clientData.ClientDescription + " Queue=wireless-default/wireless-default target=" + clientData.IpAddress + " \r\n"; 
-            clientData.DhcpLeases = "/delay 1 \r\n/ip dhcp-server lease\r\n add address=" + clientData.IpAddress + " always-broadcast=yes comment=" + clientData.ClientDescription + " disabled=no mac-address=" + clientData.MAC_Address + " server=" + clientData.DHCP_Server + " \r\n";
-            clientData.FirewallList = "/delay 1 \r\n/ip firewall address-list\r\n add address=" + clientData.IpAddress + " comment=" + clientData.ClientDescription + " list=klienci \r\n";
-
-            ClipboardText = clientData.Queue + clientData.DhcpLeases + clientData.FirewallList;
             if (description_box.Text.Length == 0)
             {
 
             }
             else
             {
-                clientInfoPrint.Text = ClipboardText;
+                clientInfoPrint.Text = clientData.MikrotikPrintData();
             }
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            DownloadSpeedBox.Text = "10";
-            UploadSpeedBox.Text = "2";
-
             if (!File.Exists(FileName))
             {
                 using StreamWriter sw = File.CreateText(FileName);
@@ -183,7 +140,8 @@ namespace MikrotikAddClient
 
         private void GenerateMacButton_Click(object sender, EventArgs e)
         {
-            MacAddressBox.Text = GetRandomMacAddress();
+            //MacAddressBox.Text = GetRandomMacAddress();
+            MacAddressBox.Text = clientData.GetRandomMacAddress();
         }
 
         private void clientInfoPrint_TextChanged(object sender, EventArgs e)
