@@ -9,7 +9,6 @@ namespace MikrotikAddClient
 {
     public partial class MikrotikAddClient : Form
     {
-        string ClipboardText = "";
         List<string> FromFile = new();
         readonly string FileName = "DHCP-Servers.txt";
         ClientData clientData = new ClientData();
@@ -21,8 +20,6 @@ namespace MikrotikAddClient
 
         private void print_btn_Click(object sender, EventArgs e)
         {
-            //ClientData clientData = new ClientData();
-
             clientData.IpAddress = ipaddress_box.Text;
             clientData.ClientDescription = description_box.Text;
             clientData.DownloadSpeed = int.Parse(DownloadSpeedBox.Text);
@@ -69,15 +66,6 @@ namespace MikrotikAddClient
             }
         }
 
-        public static string GetRandomMacAddress()
-        {
-            var random = new Random();
-            var buffer = new byte[6];
-            random.NextBytes(buffer);
-            var result = String.Concat(buffer.Select(x => string.Format("{0}:", x.ToString("X2"))).ToArray());
-            return result.TrimEnd(':');
-        }
-
         private void UpdateForm()
         {
             DHCP_Value.Items.Clear();
@@ -88,7 +76,7 @@ namespace MikrotikAddClient
 
         private void Copy_Button_Click(object sender, EventArgs e)
         {
-            Clipboard.SetDataObject(ClipboardText);
+            Clipboard.SetDataObject(clientInfoPrint.Text);
         }
 
         private void Edit_Button_Click(object sender, EventArgs e)
@@ -125,12 +113,13 @@ namespace MikrotikAddClient
 
         private void DownloadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar);
+            //Input only numbers & backspace
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b')
         }
 
         private void UploadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar);
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b');
         }
 
         private void closeProgramToolStripMenuItem_Click(object sender, EventArgs e)
@@ -140,7 +129,6 @@ namespace MikrotikAddClient
 
         private void GenerateMacButton_Click(object sender, EventArgs e)
         {
-            //MacAddressBox.Text = GetRandomMacAddress();
             MacAddressBox.Text = clientData.GetRandomMacAddress();
         }
 
