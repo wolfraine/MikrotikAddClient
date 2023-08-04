@@ -473,9 +473,6 @@
         private ToolStripMenuItem helpToolStripMenuItem;
         private TabControl AddClientTable;
         private TabPage tabPage1;
-        private TabControl tabControl2;
-        private TabPage tabPage3;
-        private TabPage tabPage4;
         private Label UploadSpeedLabel;
         private Label DownloadSpeedLabel;
         private TextBox DownloadSpeedBox;
@@ -487,7 +484,6 @@
         private TextBox ipaddress_box;
         private TextBox description_box;
         private TabPage tabPage2;
-        private ComboBox comboBox1;
         private TextBox UploadSpeedBox;
         private ComboBox DHCP_Value;
         private Label DHCP_ServerLabel;

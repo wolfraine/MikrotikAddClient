@@ -32,7 +32,7 @@ namespace MikrotikAddClient
                 + ClientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server + " \r\n";
 
             FirewallList = "/delay 1 \r\n/ip firewall address-list\r\n add address=" + IpAddress + " comment="
-                + ClientDescription + " list=klienci \r\n";
+                + ClientDescription + " list=klienci \r\n / \r\n";
             return Queue + DhcpLeases + FirewallList;
         }
 

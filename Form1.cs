@@ -47,6 +47,9 @@ namespace MikrotikAddClient
 
             FromFile.AddRange(File.ReadAllLines(FileName));
             UpdateForm();
+
+            DownloadSpeedBox.Text = clientData.DownloadSpeed.ToString();
+            UploadSpeedBox.Text = clientData.UploadSpeed.ToString();
         }
 
         private void AddDHCP_ServerButton_Click(object sender, EventArgs e)
@@ -107,8 +110,8 @@ namespace MikrotikAddClient
         {
             ipaddress_box.Clear();
             description_box.Clear();
-            DownloadSpeedBox.Clear();
-            UploadSpeedBox.Clear();
+            DownloadSpeedBox.Text = "0";
+            UploadSpeedBox.Text = "0";
             MacAddressBox.Clear();
             clientInfoPrint.Clear();
             DHCP_Value.SelectedItem = null;
