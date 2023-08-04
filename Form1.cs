@@ -76,7 +76,9 @@ namespace MikrotikAddClient
 
         private void Copy_Button_Click(object sender, EventArgs e)
         {
-            Clipboard.SetDataObject(clientInfoPrint.Text);
+            //WARNING Can't read from box because it doesn't read newlines.
+            //Clipboard.SetDataObject(clientInfoPrint.Text);
+            Clipboard.SetDataObject(clientData.MikrotikPrintData());
         }
 
         private void Edit_Button_Click(object sender, EventArgs e)
@@ -120,6 +122,7 @@ namespace MikrotikAddClient
 
         private void UploadSpeedBox_KeyPress(object sender, KeyPressEventArgs e)
         {
+            //Input only numbers & backspace
             e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == '\b');
         }
 

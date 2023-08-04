@@ -24,14 +24,14 @@ namespace MikrotikAddClient
 
         public string MikrotikPrintData()
         {
-            Queue = "/queue simple\r\n add burst-limit=" + SpeedCalculate(DownloadSpeed) + "M/" + SpeedCalculate(UploadSpeed) 
+            Queue = "/queue simple \r\n add burst-limit=" + SpeedCalculate(UploadSpeed) + "M/" + SpeedCalculate(DownloadSpeed) 
                 + "M burst-threshold=" + UploadSpeed + "M/" + DownloadSpeed + "M burst-time=8s/8s max-limit=" + UploadSpeed + "M/" 
                 + DownloadSpeed + "M name=" + ClientDescription + " queue=wireless-default/wireless-default target=" + IpAddress + " \r\n";
 
             DhcpLeases = "/delay 1 \r\n/ip dhcp-server lease\r\n add address=" + IpAddress + " always-broadcast=yes comment="
                 + ClientDescription + " disabled=no mac-address=" + MAC_Address + " server=" + DHCP_Server + " \r\n";
 
-           FirewallList = "/delay 1 \r\n/ip firewall address-list\r\n add address=" + IpAddress + " comment="
+            FirewallList = "/delay 1 \r\n/ip firewall address-list\r\n add address=" + IpAddress + " comment="
                 + ClientDescription + " list=klienci \r\n";
             return Queue + DhcpLeases + FirewallList;
         }
